@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function constructor</title>
+</head>
+<body>
+    <script>
+        function student(studentname,studentrollno,studentstandard,studentmarks)
+        {
+            this.studentname=studentname;
+            this.studentrollno=studentrollno;
+            this.studentstandard=studentstandard;
+            this.studentmarks=studentmarks;
+        }
+        var s1=new student("ShaikMohammed","7","10TH","90")
+        var s2=new student("Shaik khalid","8","11TH","91")
+        var s3=new student("Shaik Noor","9","10TH","85")
+        var s4=new student("Anji","10","11TH","80")
+        var s5=new student("Abumair","5","10TH","78")
+        var s6=new student("ShaikAmeen","2","11TH","70")
+        var s7=new student("kubra","7","10TH","80")
+        var s8=new student("Ruhi","1","11TH","90")
+        var s9=new student("haffu","3","10TH","60")
+        var s10=new student("hasnain","6","11TH","50")
+
+        var mystudents=[s1,s2,s3,s4,s5,s6,s7,s8,s9,s10];
+        for(mystd of mystudents)
+        {
+            if(mystd.studentmarks>=80)
+            {
+                for(s in mystd)
+                {
+                    document.write(s+":"+mystd[s]+"<br>")
+                }
+            }
+        }
+    </script>
+</body>
+</html>
