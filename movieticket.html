@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie ticket booking</title>
+    <style>
+        div{
+            text-align:center;
+            border:3px solid black;
+            height:300px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>MOVIE TICKET BOOKING</h1>
+        <form>
+            <label>ENTER USER NAME</label>
+            <input id="name" type="text" placeholder="enter user name">
+            <br><br>
+            <label>ENTER YOUR PASSWORD</label>
+            <input id="pswd" type="password" placeholder="enter your password">
+            <br><br>
+            <label>Select Movie</label>&nbsp;&nbsp;&nbsp;
+            <select>
+                <option>SELECT THE MOVIE</option>
+                <option>WAR</option>
+                <option>KINGKONG</option>
+                <option>PIRATES</option>
+                <option>AVATAR2</option>
+                <option>WAY OF WATER</option>
+            </select>
+            <br><br>
+            <label>SELECT SEATINGS</label>
+            <select id="select">
+                <option>SELECT YOUR SEATINGS</option>
+                <option value="250">SILVER</option>
+                <option value="350">PLATINUM</option>
+                <option value="450">GOLD</option>
+                <option value="550">DAIMOND</option>
+            </select>
+            <br><br>
+            <label>NO OF TICKETS</label>
+            <input type="number" placeholder="enter no.of tickets to book" id="tickets">
+            <br><br>
+        </form>
+        <button type="reset" onclick="cancelbtn()" id="cbtn">CANCEL</button>
+        <button type="submit" onclick="selectbtn()" id="sbtn">SUBMIT</button>
+    </div>
+    <script>
+        function selectbtn()
+        {
+            var user=document.getElementById("name").value;
+            var psw=document.getElementById("pswd").value;
+            var code=user.substr(0,3)+"123";
+
+            if(psw==code)
+            {
+                var tkt=document.getElementById("tickets").value;
+                var clsval=document.getElementById("select").value;
+                var price=tkt*parseInt(clsval);
+                document.write("YOU HAVE SUCCESSFULLY BOOKED THE TICKETS"+tkt+" AND YOUR PAYABLE AMOUNT IS"+price+"ONLY")
+                
+            }
+            else{
+                document.getElementById("res").innerHTML="YOUR BOOKINGS FAILED";
+            }
+           
+        }
+        function cancelbtn()
+        {
+            document.write("YOU HAVE CANCELLED THE BOOKINGS");
+        }
+
+
+
+    </script>
+
+
+
+
+</body>
+</html>
