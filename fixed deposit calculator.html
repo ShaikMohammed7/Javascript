@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIXED DEPOSIT CALCULATOR</title>
+    <style>
+        h1{
+            color: rgb(80, 47, 8);
+        }
+            .deposit
+            {
+                border: 1px solid grey;
+                margin-left: 300px;
+                padding: 40px;
+                border-radius: 20px;
+                margin-top: 90px;
+                width: 600px;
+                background-color: aquamarine;
+            }
+            .name
+            {
+                border-radius: 20px;
+                padding: 5px;
+            }
+            .year
+            {
+                
+                border-radius: 20px;
+                padding: 5px;
+            }
+        
+            .amount
+            {
+                
+                border-radius: 20px;
+                padding: 5px;
+            }
+
+
+            .tenure
+            {
+                
+                border-radius: 20px;
+                padding: 5px;
+            }
+           
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="deposit">
+        <h1>FIXED DEPOSIT CALCULATOR</h1>
+    <label><mark>NAME -</mark></label>
+    <input class="name" id="i1" type="name" placeholder="PLEASE ENTER NAME" required>
+    <br><br><br>
+
+    <label><mark>DATE OF YEAR - </mark></label>
+    <input class="year" id="i2" type="number" placeholder="PLEASE ENTER YEAR" required>
+    <br><br><br>
+
+    <label><mark>AMOUNT - </mark> </label>
+    <input class="amount" id="i3" type="number" placeholder="PLEASE ENTER AMOUNT" required>
+    <br><br><br>
+
+    <label><mark>Tenure - </mark></label>
+    <input class="tenure" id="i4" type="number" placeholder="PLEAS ENTER TENURE" required>
+    <br><br><br>
+    <label for="" id="i5"></label>
+    <button onclick="dept()">Deposit</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button onclick="can()">Cancel</button>
+
+    </div>
+    <script>
+        function dept()
+        {
+            var amount=parseInt(document.getElementById("i3").value);
+            var tenure=parseInt(document.getElementById("i4").value);
+            var year=parseInt(document.getElementById("i2").value);
+            var rate;
+            var age=2023-year
+            if(age>45)
+            {
+                rate=5;
+            }
+
+            else if(age>45 && age<60)
+            {
+                rate=6;
+            }
+            else
+            {
+                rate=7.5;
+            
+            }
+            var intr=parseInt((amount*tenure*rate)/100);
+            var totamt=amount+intr;
+            alert(totamt);
+        }
+    </script>
+
+
+
+
+
+
+    
+</body>
+</html>
